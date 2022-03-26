@@ -61,6 +61,7 @@ class _HeaderState extends State<Header> {
                 height: 20,
                 width: 1.0,
                 color: Colors.white,
+                //login 과 signup사이 세로줄을 만듬
               ),
               const SizedBox(width: 10.0),
               Text(
@@ -106,9 +107,11 @@ class _HeaderNavState extends State<HeaderNav> {
           ),
         ),
         widget.selected ? const SizedBox(height: 5.0) : const SizedBox(),
+        //위젯선택이 참이면 사이박스 높이를 5만큼 그렇지않으면 그대로
         widget.selected
-            ? CircleAvatar(backgroundColor: Colors.white, radius: 2.0)
-            : SizedBox(),
+            ? const CircleAvatar(backgroundColor: Colors.white, radius: 2.0)
+            : const SizedBox(),
+        //위젯선택이 참이면 하얀 점을 아니면 빈박스
       ],
     );
   }
