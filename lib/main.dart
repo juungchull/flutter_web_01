@@ -2,12 +2,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_web_01/src/header.dart';
+import 'package:flutter_web_01/src/infoPalette.dart';
 import 'package:flutter_web_01/src/profileImage.dart';
 import 'package:flutter_web_01/src/profileTile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -32,7 +33,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: SingleChildScrollView(
@@ -50,7 +51,7 @@ class _HomeState extends State<Home> {
                           children: [
                             Transform(
                               transform: Matrix4.rotationZ(pi / 6)
-                                ..translate(-180, 170),
+                                ..translate(-250, 150),
                               child: Container(
                                 height: 350.0,
                                 width: 700.0,
@@ -63,7 +64,7 @@ class _HomeState extends State<Home> {
                             Positioned(
                               top: 200,
                               left: 100,
-                              child: Container(
+                              child: SizedBox(
                                 height: 400,
                                 width: 400,
                                 child: Column(
@@ -82,8 +83,8 @@ class _HomeState extends State<Home> {
                                         fontWeight: FontWeight.w700,
                                       ),
                                     ),
-                                    SizedBox(height: 20),
-                                    Container(
+                                    const SizedBox(height: 20),
+                                    SizedBox(
                                       width: 300,
                                       child: Text(
                                         'Describe your project and find a top talent team around the world or near you. Leave your E-mail to get invite for 30 days free trail',
@@ -96,7 +97,7 @@ class _HomeState extends State<Home> {
                                     const SizedBox(height: 30.0),
                                     Row(
                                       children: [
-                                        Container(
+                                        SizedBox(
                                           height: 45.0,
                                           width: 230.0,
                                           child: TextField(
@@ -122,7 +123,7 @@ class _HomeState extends State<Home> {
                                                     BorderRadius.circular(30.0),
                                               )),
                                           onPressed: () {},
-                                          child: Container(
+                                          child: SizedBox(
                                             height: 45.0,
                                             width: 100,
                                             child: Center(
@@ -187,6 +188,13 @@ class _HomeState extends State<Home> {
                               subTitle: 'Scarlett',
                               factor: 0.5,
                             ),
+                            ProfileTile(
+                              top: 295.0,
+                              left: 480.0,
+                              title: 'I am Gonna give u Color theory',
+                              subTitle: 'Scarlett',
+                              factor: 0.8,
+                            ),
                           ],
                         ),
                       )
@@ -202,6 +210,7 @@ class _HomeState extends State<Home> {
                 child: Stack(
                   children: [
                     Positioned(
+                      right: -150,
                       child: Container(
                         height: 330.0,
                         width: 430.0,
@@ -221,8 +230,93 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         const SizedBox(height: 40.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: const [
+                            InfoPalette(
+                                title: 'Community',
+                                text:
+                                    'Communicate with collegues, share ideas, find a team in a project in one space',
+                                icon: Icons.people_rounded),
+                            InfoPalette(
+                                title: 'Overview Report',
+                                text:
+                                    'Track your progress thanks to the reporting system right inside the platform',
+                                icon: Icons.pie_chart_rounded),
+                            InfoPalette(
+                                title: 'Dashboard',
+                                text:
+                                    'Manage your projects and tasks by tracking activity on the dashboard',
+                                icon: Icons.person_rounded),
+                          ],
+                        ),
+                        const SizedBox(height: 60),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              primary: Colors.black87,
+                              padding: const EdgeInsets.all(0.0)),
+                          onPressed: () {},
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 30.0,
+                              vertical: 8.0,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40.0),
+                              border: Border.all(
+                                color: Colors.grey,
+                              ),
+                            ),
+                            child: Text(
+                              'Explore More',
+                              style: GoogleFonts.nunito(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     )
+                  ],
+                ),
+              ),
+              Container(
+                height: 500,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.white,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      left: -250,
+                      child: Container(
+                        height: 450,
+                        width: 700,
+                        decoration: BoxDecoration(
+                          color: Colors.amber[400],
+                          borderRadius: BorderRadius.circular(400),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 20,
+                      left: 100,
+                      child: Container(
+                        height: 400,
+                        width: 700,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        child: Image.network(
+                          'https://images.unsplash.com/photo-1636038197596-28e7dce070e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )
