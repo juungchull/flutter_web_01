@@ -27,7 +27,7 @@ class ProfileImage extends StatelessWidget {
             image,
             fit: BoxFit.cover,
           ),
-          borderRadius: BorderRadius.circular(100.0),
+          borderRadius: BorderRadius.circular(300.0),
         ),
       ),
     );

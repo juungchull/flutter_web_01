@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_01/src/header.dart';
 import 'package:flutter_web_01/src/profileImage.dart';
+import 'package:flutter_web_01/src/profileTile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -150,34 +151,41 @@ class _HomeState extends State<Home> {
                         width: MediaQuery.of(context).size.width * 0.55,
                         child: Stack(
                           clipBehavior: Clip.none,
-                          children: [
+                          children: const [
                             ProfileImage(
                               top: 140,
                               left: 90,
                               diameter: 200,
+                              image:
+                                  'https://images.unsplash.com/photo-1644870514410-ca634ac07c41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80',
+                            ),
+                            ProfileImage(
+                              top: 160,
+                              left: 310,
+                              diameter: 100,
+                              image:
+                                  'https://images.unsplash.com/photo-1647095187523-a65049a07361?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                            ),
+                            ProfileImage(
+                              top: 275,
+                              left: 280,
+                              diameter: 280,
+                              image:
+                                  'https://images.unsplash.com/photo-1645032227724-e2d48093aaeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+                            ),
+                            ProfileImage(
+                              top: 360,
+                              left: 90,
+                              diameter: 170,
                               image:
                                   'https://images.unsplash.com/photo-1647529012409-46c39666da4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80',
                             ),
-                            ProfileImage(
-                              top: 140,
-                              left: 90,
-                              diameter: 200,
-                              image:
-                                  'https://images.unsplash.com/photo-1647529012409-46c39666da4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80',
-                            ),
-                            ProfileImage(
-                              top: 140,
-                              left: 90,
-                              diameter: 200,
-                              image:
-                                  'https://images.unsplash.com/photo-1647529012409-46c39666da4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80',
-                            ),
-                            ProfileImage(
-                              top: 140,
-                              left: 90,
-                              diameter: 200,
-                              image:
-                                  'https://images.unsplash.com/photo-1647529012409-46c39666da4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80',
+                            ProfileTile(
+                              top: 380.0,
+                              left: 50.0,
+                              title: 'I am Gonna give u Color theory',
+                              subTitle: 'Scarlett',
+                              factor: 0.5,
                             ),
                           ],
                         ),
@@ -186,6 +194,37 @@ class _HomeState extends State<Home> {
                   ),
                   const Header(),
                 ],
+              ),
+              Container(
+                height: 400.0,
+                width: double.infinity,
+                color: Colors.white,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      child: Container(
+                        height: 330.0,
+                        width: 430.0,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100],
+                          borderRadius: BorderRadius.circular(300.0),
+                        ),
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          'How it works',
+                          style: GoogleFonts.nunito(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(height: 40.0),
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
