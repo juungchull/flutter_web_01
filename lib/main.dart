@@ -317,6 +317,69 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+                    const ProfileTile(
+                      top: -10,
+                      left: 80,
+                      title: 'Send a final design to the team',
+                      subTitle: 'Sara, client',
+                      factor: 1.0,
+                    ),
+                    const ProfileTile(
+                      top: 400,
+                      left: 620,
+                      title: 'Publish your project whenever you want',
+                      subTitle: 'Micheal',
+                      factor: 1.0,
+                    ),
+                    Positioned(
+                      right: 100,
+                      top: 150,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Easy Project Management',
+                            style: GoogleFonts.nunito(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 25.0,
+                            ),
+                          ),
+                          const SizedBox(height: 15.0),
+                          SizedBox(
+                            width: 280.0,
+                            child: Text(
+                              'Manage your project, Organize your own workspace, keep statistics and collaborate with your teammates in one place',
+                              style: GoogleFonts.nunito(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14.0,
+                                color: Colors.black54,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20.0),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(100.0),
+                                ),
+                                backgroundColor: Colors.grey[900],
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 50.0,
+                                  vertical: 20.0,
+                                )),
+                            onPressed: () {},
+                            child: Text(
+                              'Try to free',
+                              style: GoogleFonts.nunito(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               )
